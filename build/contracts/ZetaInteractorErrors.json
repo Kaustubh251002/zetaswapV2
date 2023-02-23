@@ -1,0 +1,187 @@
+{
+  "contractName": "ZetaInteractorErrors",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        }
+      ],
+      "name": "InvalidCaller",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidDestinationChainId",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidZetaMessageCall",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidZetaRevertCall",
+      "type": "error"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"InvalidCaller\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidDestinationChainId\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidZetaMessageCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidZetaRevertCall\",\"type\":\"error\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@zetachain/protocol-contracts/contracts/interfaces/ZetaInteractorErrors.sol\":\"ZetaInteractorErrors\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@zetachain/protocol-contracts/contracts/interfaces/ZetaInteractorErrors.sol\":{\"keccak256\":\"0x4e6970dbd4dc6d8dea43ca234a93c2b37839caf28bf90ebd3316d3f218871f29\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bb608544961cc2dafa349c65337d6c9f6138b2f1d80c411bf4c41e5dbe869c55\",\"dweb:/ipfs/QmXhxy1T64oDtthh62qCt74f2VAfZH316ZEyHwBiXiJ5ZW\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.7;\n\ninterface ZetaInteractorErrors {\n    error InvalidDestinationChainId();\n\n    error InvalidCaller(address caller);\n\n    error InvalidZetaMessageCall();\n\n    error InvalidZetaRevertCall();\n}\n",
+  "sourcePath": "@zetachain\\protocol-contracts\\contracts\\interfaces\\ZetaInteractorErrors.sol",
+  "ast": {
+    "absolutePath": "@zetachain/protocol-contracts/contracts/interfaces/ZetaInteractorErrors.sol",
+    "exportedSymbols": {
+      "ZetaInteractorErrors": [
+        1749
+      ]
+    },
+    "id": 1750,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1738,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:22:12"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 1749,
+        "linearizedBaseContracts": [
+          1749
+        ],
+        "name": "ZetaInteractorErrors",
+        "nameLocation": "66:20:12",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "id": 1740,
+            "name": "InvalidDestinationChainId",
+            "nameLocation": "99:25:12",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 1739,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "124:2:12"
+            },
+            "src": "93:34:12"
+          },
+          {
+            "id": 1744,
+            "name": "InvalidCaller",
+            "nameLocation": "139:13:12",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 1743,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1742,
+                  "mutability": "mutable",
+                  "name": "caller",
+                  "nameLocation": "161:6:12",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1744,
+                  "src": "153:14:12",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1741,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "153:7:12",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "152:16:12"
+            },
+            "src": "133:36:12"
+          },
+          {
+            "id": 1746,
+            "name": "InvalidZetaMessageCall",
+            "nameLocation": "181:22:12",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 1745,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "203:2:12"
+            },
+            "src": "175:31:12"
+          },
+          {
+            "id": 1748,
+            "name": "InvalidZetaRevertCall",
+            "nameLocation": "218:21:12",
+            "nodeType": "ErrorDefinition",
+            "parameters": {
+              "id": 1747,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "239:2:12"
+            },
+            "src": "212:30:12"
+          }
+        ],
+        "scope": 1750,
+        "src": "56:188:12",
+        "usedErrors": [
+          1740,
+          1744,
+          1746,
+          1748
+        ]
+      }
+    ],
+    "src": "32:213:12"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.11",
+  "updatedAt": "2023-02-23T04:14:30.736Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

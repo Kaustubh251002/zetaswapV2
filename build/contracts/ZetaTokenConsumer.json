@@ -1,0 +1,1981 @@
+{
+  "contractName": "ZetaTokenConsumer",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountIn",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        }
+      ],
+      "name": "EthExchangedForZeta",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountIn",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        }
+      ],
+      "name": "TokenExchangedForZeta",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountIn",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        }
+      ],
+      "name": "ZetaExchangedForEth",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountIn",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        }
+      ],
+      "name": "ZetaExchangedForToken",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "destinationAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minAmountOut",
+          "type": "uint256"
+        }
+      ],
+      "name": "getZetaFromEth",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "destinationAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minAmountOut",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "inputToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "inputTokenAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "getZetaFromToken",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "destinationAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minAmountOut",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "zetaTokenAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "getEthFromZeta",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "destinationAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minAmountOut",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "outputToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "zetaTokenAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "getTokenFromZeta",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"}],\"name\":\"EthExchangedForZeta\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"}],\"name\":\"TokenExchangedForZeta\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"}],\"name\":\"ZetaExchangedForEth\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"}],\"name\":\"ZetaExchangedForToken\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"destinationAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"minAmountOut\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"zetaTokenAmount\",\"type\":\"uint256\"}],\"name\":\"getEthFromZeta\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"destinationAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"minAmountOut\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"outputToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"zetaTokenAmount\",\"type\":\"uint256\"}],\"name\":\"getTokenFromZeta\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"destinationAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"minAmountOut\",\"type\":\"uint256\"}],\"name\":\"getZetaFromEth\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"destinationAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"minAmountOut\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"inputToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"inputTokenAmount\",\"type\":\"uint256\"}],\"name\":\"getZetaFromToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"ZetaTokenConsumer makes it easier to handle the following situations:   - Getting Zeta using native coin (to pay for destination gas while using `connector.send`)   - Getting Zeta using a token (to pay for destination gas while using `connector.send`)   - Getting native coin using Zeta (to return unused destination gas when `onZetaRevert` is executed)   - Getting a token using Zeta (to return unused destination gas when `onZetaRevert` is executed)The interface can be implemented using different strategies, like UniswapV2, UniswapV3, etc\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@zetachain/protocol-contracts/contracts/interfaces/ZetaInterfaces.sol\":\"ZetaTokenConsumer\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@zetachain/protocol-contracts/contracts/interfaces/ZetaInterfaces.sol\":{\"keccak256\":\"0x03bbe59af8ad48d0d3be58194235b11911da74f0e3198f235431461ee4317956\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bdcc8ff6a0a24608fe1784ec9d1800ddb576edddc35b5b75ac70ce8905d20e03\",\"dweb:/ipfs/QmaY3XGWNHYpV3iiEiNwJueymLiu2E5aqrsi4icLDHseoq\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.7;\n\ninterface ZetaInterfaces {\n    /**\n     * @dev Use SendInput to interact with the Connector: connector.send(SendInput)\n     */\n    struct SendInput {\n        /// @dev Chain id of the destination chain. More about chain ids https://docs.zetachain.com/learn/glossary#chain-id\n        uint256 destinationChainId;\n        /// @dev Address receiving the message on the destination chain (expressed in bytes since it can be non-EVM)\n        bytes destinationAddress;\n        /// @dev Gas limit for the destination chain's transaction\n        uint256 destinationGasLimit;\n        /// @dev An encoded, arbitrary message to be parsed by the destination contract\n        bytes message;\n        /// @dev ZETA to be sent cross-chain + ZetaChain gas fees + destination chain gas fees (expressed in ZETA)\n        uint256 zetaValueAndGas;\n        /// @dev Optional parameters for the ZetaChain protocol\n        bytes zetaParams;\n    }\n\n    /**\n     * @dev Our Connector calls onZetaMessage with this struct as argument\n     */\n    struct ZetaMessage {\n        bytes zetaTxSenderAddress;\n        uint256 sourceChainId;\n        address destinationAddress;\n        uint256 zetaValueAndGas;\n        bytes message;\n    }\n\n    /**\n     * @dev Our Connector calls onZetaRevert with this struct as argument\n     */\n    struct ZetaRevert {\n        address zetaTxSenderAddress;\n        uint256 sourceChainId;\n        bytes destinationAddress;\n        uint256 destinationChainId;\n        uint256 zetaValueAndGas;\n        bytes message;\n    }\n}\n\ninterface ZetaConnector {\n    /**\n     * @dev Sending value and data cross-chain is as easy as calling connector.send(SendInput)\n     */\n    function send(ZetaInterfaces.SendInput calldata input) external;\n}\n\ninterface ZetaReceiver {\n    /**\n     * @dev onZetaMessage is called when a cross-chain message reaches a contract\n     */\n    function onZetaMessage(ZetaInterfaces.ZetaMessage calldata zetaMessage) external;\n\n    /**\n     * @dev onZetaRevert is called when a cross-chain message reverts.\n     * It's useful to rollback to the original state\n     */\n    function onZetaRevert(ZetaInterfaces.ZetaRevert calldata zetaRevert) external;\n}\n\n/**\n * @dev ZetaTokenConsumer makes it easier to handle the following situations:\n *   - Getting Zeta using native coin (to pay for destination gas while using `connector.send`)\n *   - Getting Zeta using a token (to pay for destination gas while using `connector.send`)\n *   - Getting native coin using Zeta (to return unused destination gas when `onZetaRevert` is executed)\n *   - Getting a token using Zeta (to return unused destination gas when `onZetaRevert` is executed)\n * @dev The interface can be implemented using different strategies, like UniswapV2, UniswapV3, etc\n */\ninterface ZetaTokenConsumer {\n    event EthExchangedForZeta(uint256 amountIn, uint256 amountOut);\n    event TokenExchangedForZeta(address token, uint256 amountIn, uint256 amountOut);\n    event ZetaExchangedForEth(uint256 amountIn, uint256 amountOut);\n    event ZetaExchangedForToken(address token, uint256 amountIn, uint256 amountOut);\n\n    function getZetaFromEth(address destinationAddress, uint256 minAmountOut) external payable returns (uint256);\n\n    function getZetaFromToken(\n        address destinationAddress,\n        uint256 minAmountOut,\n        address inputToken,\n        uint256 inputTokenAmount\n    ) external returns (uint256);\n\n    function getEthFromZeta(\n        address destinationAddress,\n        uint256 minAmountOut,\n        uint256 zetaTokenAmount\n    ) external returns (uint256);\n\n    function getTokenFromZeta(\n        address destinationAddress,\n        uint256 minAmountOut,\n        address outputToken,\n        uint256 zetaTokenAmount\n    ) external returns (uint256);\n}\n",
+  "sourcePath": "@zetachain\\protocol-contracts\\contracts\\interfaces\\ZetaInterfaces.sol",
+  "ast": {
+    "absolutePath": "@zetachain/protocol-contracts/contracts/interfaces/ZetaInterfaces.sol",
+    "exportedSymbols": {
+      "ZetaConnector": [
+        1803
+      ],
+      "ZetaInterfaces": [
+        1795
+      ],
+      "ZetaReceiver": [
+        1818
+      ],
+      "ZetaTokenConsumer": [
+        1894
+      ]
+    },
+    "id": 1895,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1751,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:22:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": true,
+        "id": 1795,
+        "linearizedBaseContracts": [
+          1795
+        ],
+        "name": "ZetaInterfaces",
+        "nameLocation": "66:14:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "ZetaInterfaces.SendInput",
+            "id": 1770,
+            "members": [
+              {
+                "constant": false,
+                "id": 1754,
+                "mutability": "mutable",
+                "name": "destinationChainId",
+                "nameLocation": "346:18:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1770,
+                "src": "338:26:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1753,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "338:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1757,
+                "mutability": "mutable",
+                "name": "destinationAddress",
+                "nameLocation": "497:18:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1770,
+                "src": "491:24:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 1756,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "491:5:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1760,
+                "mutability": "mutable",
+                "name": "destinationGasLimit",
+                "nameLocation": "600:19:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1770,
+                "src": "592:27:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1759,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "592:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1763,
+                "mutability": "mutable",
+                "name": "message",
+                "nameLocation": "723:7:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1770,
+                "src": "717:13:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 1762,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "717:5:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1766,
+                "mutability": "mutable",
+                "name": "zetaValueAndGas",
+                "nameLocation": "863:15:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1770,
+                "src": "855:23:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1765,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "855:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1769,
+                "mutability": "mutable",
+                "name": "zetaParams",
+                "nameLocation": "958:10:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1770,
+                "src": "952:16:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 1768,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "952:5:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "SendInput",
+            "nameLocation": "194:9:13",
+            "nodeType": "StructDefinition",
+            "scope": 1795,
+            "src": "187:788:13",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "ZetaInterfaces.ZetaMessage",
+            "id": 1781,
+            "members": [
+              {
+                "constant": false,
+                "id": 1772,
+                "mutability": "mutable",
+                "name": "zetaTxSenderAddress",
+                "nameLocation": "1107:19:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1781,
+                "src": "1101:25:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 1771,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1101:5:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1774,
+                "mutability": "mutable",
+                "name": "sourceChainId",
+                "nameLocation": "1144:13:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1781,
+                "src": "1136:21:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1773,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1136:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1776,
+                "mutability": "mutable",
+                "name": "destinationAddress",
+                "nameLocation": "1175:18:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1781,
+                "src": "1167:26:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1775,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1167:7:13",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1778,
+                "mutability": "mutable",
+                "name": "zetaValueAndGas",
+                "nameLocation": "1211:15:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1781,
+                "src": "1203:23:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1777,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1203:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1780,
+                "mutability": "mutable",
+                "name": "message",
+                "nameLocation": "1242:7:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1781,
+                "src": "1236:13:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 1779,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1236:5:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "ZetaMessage",
+            "nameLocation": "1079:11:13",
+            "nodeType": "StructDefinition",
+            "scope": 1795,
+            "src": "1072:184:13",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "ZetaInterfaces.ZetaRevert",
+            "id": 1794,
+            "members": [
+              {
+                "constant": false,
+                "id": 1783,
+                "mutability": "mutable",
+                "name": "zetaTxSenderAddress",
+                "nameLocation": "1388:19:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1794,
+                "src": "1380:27:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1782,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1380:7:13",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1785,
+                "mutability": "mutable",
+                "name": "sourceChainId",
+                "nameLocation": "1425:13:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1794,
+                "src": "1417:21:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1784,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1417:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1787,
+                "mutability": "mutable",
+                "name": "destinationAddress",
+                "nameLocation": "1454:18:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1794,
+                "src": "1448:24:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 1786,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1448:5:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1789,
+                "mutability": "mutable",
+                "name": "destinationChainId",
+                "nameLocation": "1490:18:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1794,
+                "src": "1482:26:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1788,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1482:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1791,
+                "mutability": "mutable",
+                "name": "zetaValueAndGas",
+                "nameLocation": "1526:15:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1794,
+                "src": "1518:23:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 1790,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1518:7:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1793,
+                "mutability": "mutable",
+                "name": "message",
+                "nameLocation": "1557:7:13",
+                "nodeType": "VariableDeclaration",
+                "scope": 1794,
+                "src": "1551:13:13",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                },
+                "typeName": {
+                  "id": 1792,
+                  "name": "bytes",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1551:5:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_storage_ptr",
+                    "typeString": "bytes"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "ZetaRevert",
+            "nameLocation": "1359:10:13",
+            "nodeType": "StructDefinition",
+            "scope": 1795,
+            "src": "1352:219:13",
+            "visibility": "public"
+          }
+        ],
+        "scope": 1895,
+        "src": "56:1517:13",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 1803,
+        "linearizedBaseContracts": [
+          1803
+        ],
+        "name": "ZetaConnector",
+        "nameLocation": "1585:13:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 1796,
+              "nodeType": "StructuredDocumentation",
+              "src": "1605:106:13",
+              "text": " @dev Sending value and data cross-chain is as easy as calling connector.send(SendInput)"
+            },
+            "functionSelector": "ec026901",
+            "id": 1802,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "send",
+            "nameLocation": "1725:4:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1800,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1799,
+                  "mutability": "mutable",
+                  "name": "input",
+                  "nameLocation": "1764:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1802,
+                  "src": "1730:39:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_SendInput_$1770_calldata_ptr",
+                    "typeString": "struct ZetaInterfaces.SendInput"
+                  },
+                  "typeName": {
+                    "id": 1798,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1797,
+                      "name": "ZetaInterfaces.SendInput",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1770,
+                      "src": "1730:24:13"
+                    },
+                    "referencedDeclaration": 1770,
+                    "src": "1730:24:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_SendInput_$1770_storage_ptr",
+                      "typeString": "struct ZetaInterfaces.SendInput"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1729:41:13"
+            },
+            "returnParameters": {
+              "id": 1801,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1779:0:13"
+            },
+            "scope": 1803,
+            "src": "1716:64:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1895,
+        "src": "1575:207:13",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 1818,
+        "linearizedBaseContracts": [
+          1818
+        ],
+        "name": "ZetaReceiver",
+        "nameLocation": "1794:12:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 1804,
+              "nodeType": "StructuredDocumentation",
+              "src": "1813:93:13",
+              "text": " @dev onZetaMessage is called when a cross-chain message reaches a contract"
+            },
+            "functionSelector": "3749c51a",
+            "id": 1810,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onZetaMessage",
+            "nameLocation": "1920:13:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1808,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1807,
+                  "mutability": "mutable",
+                  "name": "zetaMessage",
+                  "nameLocation": "1970:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1810,
+                  "src": "1934:47:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ZetaMessage_$1781_calldata_ptr",
+                    "typeString": "struct ZetaInterfaces.ZetaMessage"
+                  },
+                  "typeName": {
+                    "id": 1806,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1805,
+                      "name": "ZetaInterfaces.ZetaMessage",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1781,
+                      "src": "1934:26:13"
+                    },
+                    "referencedDeclaration": 1781,
+                    "src": "1934:26:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ZetaMessage_$1781_storage_ptr",
+                      "typeString": "struct ZetaInterfaces.ZetaMessage"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1933:49:13"
+            },
+            "returnParameters": {
+              "id": 1809,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1991:0:13"
+            },
+            "scope": 1818,
+            "src": "1911:81:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1811,
+              "nodeType": "StructuredDocumentation",
+              "src": "1998:135:13",
+              "text": " @dev onZetaRevert is called when a cross-chain message reverts.\n It's useful to rollback to the original state"
+            },
+            "functionSelector": "3ff0693c",
+            "id": 1817,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onZetaRevert",
+            "nameLocation": "2147:12:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1815,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1814,
+                  "mutability": "mutable",
+                  "name": "zetaRevert",
+                  "nameLocation": "2195:10:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1817,
+                  "src": "2160:45:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ZetaRevert_$1794_calldata_ptr",
+                    "typeString": "struct ZetaInterfaces.ZetaRevert"
+                  },
+                  "typeName": {
+                    "id": 1813,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1812,
+                      "name": "ZetaInterfaces.ZetaRevert",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1794,
+                      "src": "2160:25:13"
+                    },
+                    "referencedDeclaration": 1794,
+                    "src": "2160:25:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ZetaRevert_$1794_storage_ptr",
+                      "typeString": "struct ZetaInterfaces.ZetaRevert"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2159:47:13"
+            },
+            "returnParameters": {
+              "id": 1816,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2215:0:13"
+            },
+            "scope": 1818,
+            "src": "2138:78:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1895,
+        "src": "1784:434:13",
+        "usedErrors": []
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1819,
+          "nodeType": "StructuredDocumentation",
+          "src": "2220:579:13",
+          "text": " @dev ZetaTokenConsumer makes it easier to handle the following situations:\n   - Getting Zeta using native coin (to pay for destination gas while using `connector.send`)\n   - Getting Zeta using a token (to pay for destination gas while using `connector.send`)\n   - Getting native coin using Zeta (to return unused destination gas when `onZetaRevert` is executed)\n   - Getting a token using Zeta (to return unused destination gas when `onZetaRevert` is executed)\n @dev The interface can be implemented using different strategies, like UniswapV2, UniswapV3, etc"
+        },
+        "fullyImplemented": false,
+        "id": 1894,
+        "linearizedBaseContracts": [
+          1894
+        ],
+        "name": "ZetaTokenConsumer",
+        "nameLocation": "2810:17:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "id": 1825,
+            "name": "EthExchangedForZeta",
+            "nameLocation": "2840:19:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1824,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1821,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountIn",
+                  "nameLocation": "2868:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1825,
+                  "src": "2860:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1820,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2860:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1823,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountOut",
+                  "nameLocation": "2886:9:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1825,
+                  "src": "2878:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1822,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2878:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2859:37:13"
+            },
+            "src": "2834:63:13"
+          },
+          {
+            "anonymous": false,
+            "id": 1833,
+            "name": "TokenExchangedForZeta",
+            "nameLocation": "2908:21:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1832,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1827,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "2938:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1833,
+                  "src": "2930:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1826,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2930:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1829,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountIn",
+                  "nameLocation": "2953:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1833,
+                  "src": "2945:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1828,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2945:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1831,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountOut",
+                  "nameLocation": "2971:9:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1833,
+                  "src": "2963:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1830,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2963:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2929:52:13"
+            },
+            "src": "2902:80:13"
+          },
+          {
+            "anonymous": false,
+            "id": 1839,
+            "name": "ZetaExchangedForEth",
+            "nameLocation": "2993:19:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1838,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1835,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountIn",
+                  "nameLocation": "3021:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1839,
+                  "src": "3013:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1834,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3013:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1837,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountOut",
+                  "nameLocation": "3039:9:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1839,
+                  "src": "3031:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1836,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3031:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3012:37:13"
+            },
+            "src": "2987:63:13"
+          },
+          {
+            "anonymous": false,
+            "id": 1847,
+            "name": "ZetaExchangedForToken",
+            "nameLocation": "3061:21:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1846,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1841,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nameLocation": "3091:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1847,
+                  "src": "3083:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1840,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3083:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1843,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountIn",
+                  "nameLocation": "3106:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1847,
+                  "src": "3098:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1842,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3098:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1845,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amountOut",
+                  "nameLocation": "3124:9:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1847,
+                  "src": "3116:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1844,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3116:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3082:52:13"
+            },
+            "src": "3055:80:13"
+          },
+          {
+            "functionSelector": "013b2ff8",
+            "id": 1856,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getZetaFromEth",
+            "nameLocation": "3150:14:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1852,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1849,
+                  "mutability": "mutable",
+                  "name": "destinationAddress",
+                  "nameLocation": "3173:18:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1856,
+                  "src": "3165:26:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1848,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3165:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1851,
+                  "mutability": "mutable",
+                  "name": "minAmountOut",
+                  "nameLocation": "3201:12:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1856,
+                  "src": "3193:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1850,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3193:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3164:50:13"
+            },
+            "returnParameters": {
+              "id": 1855,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1854,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1856,
+                  "src": "3241:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1853,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3241:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3240:9:13"
+            },
+            "scope": 1894,
+            "src": "3141:109:13",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "2405620a",
+            "id": 1869,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getZetaFromToken",
+            "nameLocation": "3265:16:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1865,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1858,
+                  "mutability": "mutable",
+                  "name": "destinationAddress",
+                  "nameLocation": "3299:18:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1869,
+                  "src": "3291:26:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1857,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3291:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1860,
+                  "mutability": "mutable",
+                  "name": "minAmountOut",
+                  "nameLocation": "3335:12:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1869,
+                  "src": "3327:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1859,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3327:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1862,
+                  "mutability": "mutable",
+                  "name": "inputToken",
+                  "nameLocation": "3365:10:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1869,
+                  "src": "3357:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1861,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3357:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1864,
+                  "mutability": "mutable",
+                  "name": "inputTokenAmount",
+                  "nameLocation": "3393:16:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1869,
+                  "src": "3385:24:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1863,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3385:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3281:134:13"
+            },
+            "returnParameters": {
+              "id": 1868,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1867,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1869,
+                  "src": "3434:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1866,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3434:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3433:9:13"
+            },
+            "scope": 1894,
+            "src": "3256:187:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "54c49a2a",
+            "id": 1880,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getEthFromZeta",
+            "nameLocation": "3458:14:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1876,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1871,
+                  "mutability": "mutable",
+                  "name": "destinationAddress",
+                  "nameLocation": "3490:18:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1880,
+                  "src": "3482:26:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1870,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3482:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1873,
+                  "mutability": "mutable",
+                  "name": "minAmountOut",
+                  "nameLocation": "3526:12:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1880,
+                  "src": "3518:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1872,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3518:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1875,
+                  "mutability": "mutable",
+                  "name": "zetaTokenAmount",
+                  "nameLocation": "3556:15:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1880,
+                  "src": "3548:23:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1874,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3548:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3472:105:13"
+            },
+            "returnParameters": {
+              "id": 1879,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1878,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1880,
+                  "src": "3596:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1877,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3596:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3595:9:13"
+            },
+            "scope": 1894,
+            "src": "3449:156:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "a53fb10b",
+            "id": 1893,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTokenFromZeta",
+            "nameLocation": "3620:16:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1889,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1882,
+                  "mutability": "mutable",
+                  "name": "destinationAddress",
+                  "nameLocation": "3654:18:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1893,
+                  "src": "3646:26:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1881,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3646:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1884,
+                  "mutability": "mutable",
+                  "name": "minAmountOut",
+                  "nameLocation": "3690:12:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1893,
+                  "src": "3682:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1883,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3682:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1886,
+                  "mutability": "mutable",
+                  "name": "outputToken",
+                  "nameLocation": "3720:11:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1893,
+                  "src": "3712:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1885,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3712:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1888,
+                  "mutability": "mutable",
+                  "name": "zetaTokenAmount",
+                  "nameLocation": "3749:15:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1893,
+                  "src": "3741:23:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1887,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3741:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3636:134:13"
+            },
+            "returnParameters": {
+              "id": 1892,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1891,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1893,
+                  "src": "3789:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1890,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3789:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3788:9:13"
+            },
+            "scope": 1894,
+            "src": "3611:187:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1895,
+        "src": "2800:1000:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:3769:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.11",
+  "updatedAt": "2023-02-23T04:14:30.745Z",
+  "devdoc": {
+    "details": "ZetaTokenConsumer makes it easier to handle the following situations:   - Getting Zeta using native coin (to pay for destination gas while using `connector.send`)   - Getting Zeta using a token (to pay for destination gas while using `connector.send`)   - Getting native coin using Zeta (to return unused destination gas when `onZetaRevert` is executed)   - Getting a token using Zeta (to return unused destination gas when `onZetaRevert` is executed)The interface can be implemented using different strategies, like UniswapV2, UniswapV3, etc",
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

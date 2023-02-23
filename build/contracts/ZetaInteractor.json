@@ -1,0 +1,1945 @@
+{
+  "contractName": "ZetaInteractor",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "caller",
+          "type": "address"
+        }
+      ],
+      "name": "InvalidCaller",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidDestinationChainId",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidZetaMessageCall",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidZetaRevertCall",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "connector",
+      "outputs": [
+        {
+          "internalType": "contract ZetaConnector",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "interactorsByChainId",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "destinationChainId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "contractAddress",
+          "type": "bytes"
+        }
+      ],
+      "name": "setInteractorByChainId",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"InvalidCaller\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidDestinationChainId\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidZetaMessageCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidZetaRevertCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"connector\",\"outputs\":[{\"internalType\":\"contract ZetaConnector\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"interactorsByChainId\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"destinationChainId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"contractAddress\",\"type\":\"bytes\"}],\"name\":\"setInteractorByChainId\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"stateVariables\":{\"interactorsByChainId\":{\"details\":\"Maps a chain id to its corresponding address of the MultiChainSwap contract The address is expressed in bytes to allow non-EVM chains This mapping is useful, mainly, for two reasons:  - Given a chain id, the contract is able to route a transaction to its corresponding address  - To check that the messages (onZetaMessage, onZetaRevert) come from a trusted source\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"@zetachain/protocol-contracts/contracts/ZetaInteractor.sol\":\"ZetaInteractor\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://40fb1b5102468f783961d0af743f91b9980cf66b50d1d12009f6bb1869cea4d2\",\"dweb:/ipfs/QmYqEbJML4jB1GHbzD4cUZDtJg5wVwNm3vDJq1GbyDus8y\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92\",\"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3\"]},\"@zetachain/protocol-contracts/contracts/ZetaInteractor.sol\":{\"keccak256\":\"0x62b66a220561d6d989571e64cbd738dd1c3df3d7f9a025504ac0756f64048ae1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ccdbb0a1dd05e17d603f357e2d617403f45edf2d74a61d570df36875ca15df5e\",\"dweb:/ipfs/QmUsALmCohQ8YqTgi7BDPQ9xiVZxGJ94tqFVKQLVEF968L\"]},\"@zetachain/protocol-contracts/contracts/interfaces/ZetaInteractorErrors.sol\":{\"keccak256\":\"0x4e6970dbd4dc6d8dea43ca234a93c2b37839caf28bf90ebd3316d3f218871f29\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bb608544961cc2dafa349c65337d6c9f6138b2f1d80c411bf4c41e5dbe869c55\",\"dweb:/ipfs/QmXhxy1T64oDtthh62qCt74f2VAfZH316ZEyHwBiXiJ5ZW\"]},\"@zetachain/protocol-contracts/contracts/interfaces/ZetaInterfaces.sol\":{\"keccak256\":\"0x03bbe59af8ad48d0d3be58194235b11911da74f0e3198f235431461ee4317956\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bdcc8ff6a0a24608fe1784ec9d1800ddb576edddc35b5b75ac70ce8905d20e03\",\"dweb:/ipfs/QmaY3XGWNHYpV3iiEiNwJueymLiu2E5aqrsi4icLDHseoq\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.8.7;\n\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\n\nimport \"./interfaces/ZetaInterfaces.sol\";\nimport \"./interfaces/ZetaInteractorErrors.sol\";\n\nabstract contract ZetaInteractor is Ownable, ZetaInteractorErrors {\n    uint256 internal immutable currentChainId;\n    ZetaConnector public connector;\n\n    /**\n     * @dev Maps a chain id to its corresponding address of the MultiChainSwap contract\n     * The address is expressed in bytes to allow non-EVM chains\n     * This mapping is useful, mainly, for two reasons:\n     *  - Given a chain id, the contract is able to route a transaction to its corresponding address\n     *  - To check that the messages (onZetaMessage, onZetaRevert) come from a trusted source\n     */\n    mapping(uint256 => bytes) public interactorsByChainId;\n\n    modifier isValidMessageCall(ZetaInterfaces.ZetaMessage calldata zetaMessage) {\n        _isValidCaller();\n        if (keccak256(zetaMessage.zetaTxSenderAddress) != keccak256(interactorsByChainId[zetaMessage.sourceChainId]))\n            revert InvalidZetaMessageCall();\n        _;\n    }\n\n    modifier isValidRevertCall(ZetaInterfaces.ZetaRevert calldata zetaRevert) {\n        _isValidCaller();\n        if (zetaRevert.zetaTxSenderAddress != address(this)) revert InvalidZetaRevertCall();\n        if (zetaRevert.sourceChainId != currentChainId) revert InvalidZetaRevertCall();\n        _;\n    }\n\n    constructor(address zetaConnectorAddress) {\n        currentChainId = block.chainid;\n        connector = ZetaConnector(zetaConnectorAddress);\n    }\n\n    function _isValidCaller() private view {\n        if (msg.sender != address(connector)) revert InvalidCaller(msg.sender);\n    }\n\n    /**\n     * @dev Useful for contracts that inherit from this one\n     */\n    function _isValidChainId(uint256 chainId) internal view returns (bool) {\n        return (keccak256(interactorsByChainId[chainId]) != keccak256(new bytes(0)));\n    }\n\n    function setInteractorByChainId(uint256 destinationChainId, bytes calldata contractAddress) external onlyOwner {\n        interactorsByChainId[destinationChainId] = contractAddress;\n    }\n}\n",
+  "sourcePath": "@zetachain\\protocol-contracts\\contracts\\ZetaInteractor.sol",
+  "ast": {
+    "absolutePath": "@zetachain/protocol-contracts/contracts/ZetaInteractor.sol",
+    "exportedSymbols": {
+      "Context": [
+        862
+      ],
+      "Ownable": [
+        112
+      ],
+      "ZetaConnector": [
+        1803
+      ],
+      "ZetaInteractor": [
+        1180
+      ],
+      "ZetaInteractorErrors": [
+        1749
+      ],
+      "ZetaInterfaces": [
+        1795
+      ],
+      "ZetaReceiver": [
+        1818
+      ],
+      "ZetaTokenConsumer": [
+        1894
+      ]
+    },
+    "id": 1181,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1035,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".7"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:22:10"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/access/Ownable.sol",
+        "file": "@openzeppelin/contracts/access/Ownable.sol",
+        "id": 1036,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1181,
+        "sourceUnit": 113,
+        "src": "56:52:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@zetachain/protocol-contracts/contracts/interfaces/ZetaInterfaces.sol",
+        "file": "./interfaces/ZetaInterfaces.sol",
+        "id": 1037,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1181,
+        "sourceUnit": 1895,
+        "src": "110:41:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@zetachain/protocol-contracts/contracts/interfaces/ZetaInteractorErrors.sol",
+        "file": "./interfaces/ZetaInteractorErrors.sol",
+        "id": 1038,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 1181,
+        "sourceUnit": 1750,
+        "src": "152:47:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": true,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1039,
+              "name": "Ownable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 112,
+              "src": "237:7:10"
+            },
+            "id": 1040,
+            "nodeType": "InheritanceSpecifier",
+            "src": "237:7:10"
+          },
+          {
+            "baseName": {
+              "id": 1041,
+              "name": "ZetaInteractorErrors",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1749,
+              "src": "246:20:10"
+            },
+            "id": 1042,
+            "nodeType": "InheritanceSpecifier",
+            "src": "246:20:10"
+          }
+        ],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 1180,
+        "linearizedBaseContracts": [
+          1180,
+          1749,
+          112,
+          862
+        ],
+        "name": "ZetaInteractor",
+        "nameLocation": "219:14:10",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 1044,
+            "mutability": "immutable",
+            "name": "currentChainId",
+            "nameLocation": "300:14:10",
+            "nodeType": "VariableDeclaration",
+            "scope": 1180,
+            "src": "273:41:10",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 1043,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "273:7:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "functionSelector": "83f3084f",
+            "id": 1047,
+            "mutability": "mutable",
+            "name": "connector",
+            "nameLocation": "341:9:10",
+            "nodeType": "VariableDeclaration",
+            "scope": 1180,
+            "src": "320:30:10",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ZetaConnector_$1803",
+              "typeString": "contract ZetaConnector"
+            },
+            "typeName": {
+              "id": 1046,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 1045,
+                "name": "ZetaConnector",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 1803,
+                "src": "320:13:10"
+              },
+              "referencedDeclaration": 1803,
+              "src": "320:13:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ZetaConnector_$1803",
+                "typeString": "contract ZetaConnector"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "documentation": {
+              "id": 1048,
+              "nodeType": "StructuredDocumentation",
+              "src": "357:415:10",
+              "text": " @dev Maps a chain id to its corresponding address of the MultiChainSwap contract\n The address is expressed in bytes to allow non-EVM chains\n This mapping is useful, mainly, for two reasons:\n  - Given a chain id, the contract is able to route a transaction to its corresponding address\n  - To check that the messages (onZetaMessage, onZetaRevert) come from a trusted source"
+            },
+            "functionSelector": "2618143f",
+            "id": 1052,
+            "mutability": "mutable",
+            "name": "interactorsByChainId",
+            "nameLocation": "810:20:10",
+            "nodeType": "VariableDeclaration",
+            "scope": 1180,
+            "src": "777:53:10",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes_storage_$",
+              "typeString": "mapping(uint256 => bytes)"
+            },
+            "typeName": {
+              "id": 1051,
+              "keyType": {
+                "id": 1049,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "785:7:10",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "777:25:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes_storage_$",
+                "typeString": "mapping(uint256 => bytes)"
+              },
+              "valueType": {
+                "id": 1050,
+                "name": "bytes",
+                "nodeType": "ElementaryTypeName",
+                "src": "796:5:10",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes_storage_ptr",
+                  "typeString": "bytes"
+                }
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 1076,
+              "nodeType": "Block",
+              "src": "914:207:10",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 1057,
+                      "name": "_isValidCaller",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1140,
+                      "src": "924:14:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$__$",
+                        "typeString": "function () view"
+                      }
+                    },
+                    "id": 1058,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "924:16:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1059,
+                  "nodeType": "ExpressionStatement",
+                  "src": "924:16:10"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    },
+                    "id": 1070,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "arguments": [
+                        {
+                          "expression": {
+                            "id": 1061,
+                            "name": "zetaMessage",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1055,
+                            "src": "964:11:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_ZetaMessage_$1781_calldata_ptr",
+                              "typeString": "struct ZetaInterfaces.ZetaMessage calldata"
+                            }
+                          },
+                          "id": 1062,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "zetaTxSenderAddress",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 1772,
+                          "src": "964:31:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_calldata_ptr",
+                            "typeString": "bytes calldata"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes_calldata_ptr",
+                            "typeString": "bytes calldata"
+                          }
+                        ],
+                        "id": 1060,
+                        "name": "keccak256",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967288,
+                        "src": "954:9:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes memory) pure returns (bytes32)"
+                        }
+                      },
+                      "id": 1063,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "954:42:10",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "arguments": [
+                        {
+                          "baseExpression": {
+                            "id": 1065,
+                            "name": "interactorsByChainId",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1052,
+                            "src": "1010:20:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes_storage_$",
+                              "typeString": "mapping(uint256 => bytes storage ref)"
+                            }
+                          },
+                          "id": 1068,
+                          "indexExpression": {
+                            "expression": {
+                              "id": 1066,
+                              "name": "zetaMessage",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 1055,
+                              "src": "1031:11:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_ZetaMessage_$1781_calldata_ptr",
+                                "typeString": "struct ZetaInterfaces.ZetaMessage calldata"
+                              }
+                            },
+                            "id": 1067,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sourceChainId",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 1774,
+                            "src": "1031:25:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "1010:47:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_storage",
+                            "typeString": "bytes storage ref"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes_storage",
+                            "typeString": "bytes storage ref"
+                          }
+                        ],
+                        "id": 1064,
+                        "name": "keccak256",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967288,
+                        "src": "1000:9:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes memory) pure returns (bytes32)"
+                        }
+                      },
+                      "id": 1069,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1000:58:10",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "954:104:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1074,
+                  "nodeType": "IfStatement",
+                  "src": "950:153:10",
+                  "trueBody": {
+                    "errorCall": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 1071,
+                        "name": "InvalidZetaMessageCall",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1746,
+                        "src": "1079:22:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                          "typeString": "function () pure"
+                        }
+                      },
+                      "id": 1072,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1079:24:10",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 1073,
+                    "nodeType": "RevertStatement",
+                    "src": "1072:31:10"
+                  }
+                },
+                {
+                  "id": 1075,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1113:1:10"
+                }
+              ]
+            },
+            "id": 1077,
+            "name": "isValidMessageCall",
+            "nameLocation": "846:18:10",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1056,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1055,
+                  "mutability": "mutable",
+                  "name": "zetaMessage",
+                  "nameLocation": "901:11:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1077,
+                  "src": "865:47:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ZetaMessage_$1781_calldata_ptr",
+                    "typeString": "struct ZetaInterfaces.ZetaMessage"
+                  },
+                  "typeName": {
+                    "id": 1054,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1053,
+                      "name": "ZetaInterfaces.ZetaMessage",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1781,
+                      "src": "865:26:10"
+                    },
+                    "referencedDeclaration": 1781,
+                    "src": "865:26:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ZetaMessage_$1781_storage_ptr",
+                      "typeString": "struct ZetaInterfaces.ZetaMessage"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "864:49:10"
+            },
+            "src": "837:284:10",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1105,
+              "nodeType": "Block",
+              "src": "1201:225:10",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 1082,
+                      "name": "_isValidCaller",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1140,
+                      "src": "1211:14:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$__$",
+                        "typeString": "function () view"
+                      }
+                    },
+                    "id": 1083,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1211:16:10",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1084,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1211:16:10"
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "id": 1091,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+                        "id": 1085,
+                        "name": "zetaRevert",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1080,
+                        "src": "1241:10:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ZetaRevert_$1794_calldata_ptr",
+                          "typeString": "struct ZetaInterfaces.ZetaRevert calldata"
+                        }
+                      },
+                      "id": 1086,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "zetaTxSenderAddress",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1783,
+                      "src": "1241:30:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "arguments": [
+                        {
+                          "id": 1089,
+                          "name": "this",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967268,
+                          "src": "1283:4:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ZetaInteractor_$1180",
+                            "typeString": "contract ZetaInteractor"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_ZetaInteractor_$1180",
+                            "typeString": "contract ZetaInteractor"
+                          }
+                        ],
+                        "id": 1088,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1275:7:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": {
+                          "id": 1087,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1275:7:10",
+                          "typeDescriptions": {}
+                        }
+                      },
+                      "id": 1090,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1275:13:10",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1241:47:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1095,
+                  "nodeType": "IfStatement",
+                  "src": "1237:83:10",
+                  "trueBody": {
+                    "errorCall": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 1092,
+                        "name": "InvalidZetaRevertCall",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1748,
+                        "src": "1297:21:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                          "typeString": "function () pure"
+                        }
+                      },
+                      "id": 1093,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1297:23:10",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 1094,
+                    "nodeType": "RevertStatement",
+                    "src": "1290:30:10"
+                  }
+                },
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 1099,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+                        "id": 1096,
+                        "name": "zetaRevert",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1080,
+                        "src": "1334:10:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ZetaRevert_$1794_calldata_ptr",
+                          "typeString": "struct ZetaInterfaces.ZetaRevert calldata"
+                        }
+                      },
+                      "id": 1097,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sourceChainId",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1785,
+                      "src": "1334:24:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "id": 1098,
+                      "name": "currentChainId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1044,
+                      "src": "1362:14:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1334:42:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1103,
+                  "nodeType": "IfStatement",
+                  "src": "1330:78:10",
+                  "trueBody": {
+                    "errorCall": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 1100,
+                        "name": "InvalidZetaRevertCall",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1748,
+                        "src": "1385:21:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_error_pure$__$returns$__$",
+                          "typeString": "function () pure"
+                        }
+                      },
+                      "id": 1101,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1385:23:10",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 1102,
+                    "nodeType": "RevertStatement",
+                    "src": "1378:30:10"
+                  }
+                },
+                {
+                  "id": 1104,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1418:1:10"
+                }
+              ]
+            },
+            "id": 1106,
+            "name": "isValidRevertCall",
+            "nameLocation": "1136:17:10",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 1081,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1080,
+                  "mutability": "mutable",
+                  "name": "zetaRevert",
+                  "nameLocation": "1189:10:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1106,
+                  "src": "1154:45:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_ZetaRevert_$1794_calldata_ptr",
+                    "typeString": "struct ZetaInterfaces.ZetaRevert"
+                  },
+                  "typeName": {
+                    "id": 1079,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1078,
+                      "name": "ZetaInterfaces.ZetaRevert",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1794,
+                      "src": "1154:25:10"
+                    },
+                    "referencedDeclaration": 1794,
+                    "src": "1154:25:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ZetaRevert_$1794_storage_ptr",
+                      "typeString": "struct ZetaInterfaces.ZetaRevert"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1153:47:10"
+            },
+            "src": "1127:299:10",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1122,
+              "nodeType": "Block",
+              "src": "1474:104:10",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 1114,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1111,
+                      "name": "currentChainId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1044,
+                      "src": "1484:14:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 1112,
+                        "name": "block",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967292,
+                        "src": "1501:5:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_block",
+                          "typeString": "block"
+                        }
+                      },
+                      "id": 1113,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "chainid",
+                      "nodeType": "MemberAccess",
+                      "src": "1501:13:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1484:30:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 1115,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1484:30:10"
+                },
+                {
+                  "expression": {
+                    "id": 1120,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 1116,
+                      "name": "connector",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1047,
+                      "src": "1524:9:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ZetaConnector_$1803",
+                        "typeString": "contract ZetaConnector"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 1118,
+                          "name": "zetaConnectorAddress",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1108,
+                          "src": "1550:20:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 1117,
+                        "name": "ZetaConnector",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1803,
+                        "src": "1536:13:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ZetaConnector_$1803_$",
+                          "typeString": "type(contract ZetaConnector)"
+                        }
+                      },
+                      "id": 1119,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1536:35:10",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ZetaConnector_$1803",
+                        "typeString": "contract ZetaConnector"
+                      }
+                    },
+                    "src": "1524:47:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ZetaConnector_$1803",
+                      "typeString": "contract ZetaConnector"
+                    }
+                  },
+                  "id": 1121,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1524:47:10"
+                }
+              ]
+            },
+            "id": 1123,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1109,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1108,
+                  "mutability": "mutable",
+                  "name": "zetaConnectorAddress",
+                  "nameLocation": "1452:20:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1123,
+                  "src": "1444:28:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1107,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1444:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1443:30:10"
+            },
+            "returnParameters": {
+              "id": 1110,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1474:0:10"
+            },
+            "scope": 1180,
+            "src": "1432:146:10",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1139,
+              "nodeType": "Block",
+              "src": "1623:87:10",
+              "statements": [
+                {
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "id": 1132,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "expression": {
+                        "id": 1126,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "1637:3:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 1127,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "1637:10:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "arguments": [
+                        {
+                          "id": 1130,
+                          "name": "connector",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1047,
+                          "src": "1659:9:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ZetaConnector_$1803",
+                            "typeString": "contract ZetaConnector"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_ZetaConnector_$1803",
+                            "typeString": "contract ZetaConnector"
+                          }
+                        ],
+                        "id": 1129,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1651:7:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": {
+                          "id": 1128,
+                          "name": "address",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1651:7:10",
+                          "typeDescriptions": {}
+                        }
+                      },
+                      "id": 1131,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1651:18:10",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1637:32:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 1138,
+                  "nodeType": "IfStatement",
+                  "src": "1633:70:10",
+                  "trueBody": {
+                    "errorCall": {
+                      "arguments": [
+                        {
+                          "expression": {
+                            "id": 1134,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967281,
+                            "src": "1692:3:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 1135,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "src": "1692:10:10",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "id": 1133,
+                        "name": "InvalidCaller",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1744,
+                        "src": "1678:13:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_error_pure$_t_address_$returns$__$",
+                          "typeString": "function (address) pure"
+                        }
+                      },
+                      "id": 1136,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1678:25:10",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_tuple$__$",
+                        "typeString": "tuple()"
+                      }
+                    },
+                    "id": 1137,
+                    "nodeType": "RevertStatement",
+                    "src": "1671:32:10"
+                  }
+                }
+              ]
+            },
+            "id": 1140,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_isValidCaller",
+            "nameLocation": "1593:14:10",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1124,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1607:2:10"
+            },
+            "returnParameters": {
+              "id": 1125,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1623:0:10"
+            },
+            "scope": 1180,
+            "src": "1584:126:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 1162,
+              "nodeType": "Block",
+              "src": "1863:93:10",
+              "statements": [
+                {
+                  "expression": {
+                    "components": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "id": 1159,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "arguments": [
+                            {
+                              "baseExpression": {
+                                "id": 1149,
+                                "name": "interactorsByChainId",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1052,
+                                "src": "1891:20:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes_storage_$",
+                                  "typeString": "mapping(uint256 => bytes storage ref)"
+                                }
+                              },
+                              "id": 1151,
+                              "indexExpression": {
+                                "id": 1150,
+                                "name": "chainId",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 1143,
+                                "src": "1912:7:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "1891:29:10",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes_storage",
+                                "typeString": "bytes storage ref"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_bytes_storage",
+                                "typeString": "bytes storage ref"
+                              }
+                            ],
+                            "id": 1148,
+                            "name": "keccak256",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967288,
+                            "src": "1881:9:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                              "typeString": "function (bytes memory) pure returns (bytes32)"
+                            }
+                          },
+                          "id": 1152,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1881:40:10",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "arguments": [
+                            {
+                              "arguments": [
+                                {
+                                  "hexValue": "30",
+                                  "id": 1156,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "kind": "number",
+                                  "lValueRequested": false,
+                                  "nodeType": "Literal",
+                                  "src": "1945:1:10",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_rational_0_by_1",
+                                    "typeString": "int_const 0"
+                                  },
+                                  "value": "0"
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_rational_0_by_1",
+                                    "typeString": "int_const 0"
+                                  }
+                                ],
+                                "id": 1155,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "nodeType": "NewExpression",
+                                "src": "1935:9:10",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_bytes_memory_ptr_$",
+                                  "typeString": "function (uint256) pure returns (bytes memory)"
+                                },
+                                "typeName": {
+                                  "id": 1154,
+                                  "name": "bytes",
+                                  "nodeType": "ElementaryTypeName",
+                                  "src": "1939:5:10",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bytes_storage_ptr",
+                                    "typeString": "bytes"
+                                  }
+                                }
+                              },
+                              "id": 1157,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "1935:12:10",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes_memory_ptr",
+                                "typeString": "bytes memory"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_bytes_memory_ptr",
+                                "typeString": "bytes memory"
+                              }
+                            ],
+                            "id": 1153,
+                            "name": "keccak256",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967288,
+                            "src": "1925:9:10",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                              "typeString": "function (bytes memory) pure returns (bytes32)"
+                            }
+                          },
+                          "id": 1158,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1925:23:10",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "src": "1881:67:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "id": 1160,
+                    "isConstant": false,
+                    "isInlineArray": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "TupleExpression",
+                    "src": "1880:69:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 1147,
+                  "id": 1161,
+                  "nodeType": "Return",
+                  "src": "1873:76:10"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 1141,
+              "nodeType": "StructuredDocumentation",
+              "src": "1716:71:10",
+              "text": " @dev Useful for contracts that inherit from this one"
+            },
+            "id": 1163,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_isValidChainId",
+            "nameLocation": "1801:15:10",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1144,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1143,
+                  "mutability": "mutable",
+                  "name": "chainId",
+                  "nameLocation": "1825:7:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1163,
+                  "src": "1817:15:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1142,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1817:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1816:17:10"
+            },
+            "returnParameters": {
+              "id": 1147,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1146,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1163,
+                  "src": "1857:4:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1145,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1857:4:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1856:6:10"
+            },
+            "scope": 1180,
+            "src": "1792:164:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 1178,
+              "nodeType": "Block",
+              "src": "2073:75:10",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 1176,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 1172,
+                        "name": "interactorsByChainId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1052,
+                        "src": "2083:20:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes_storage_$",
+                          "typeString": "mapping(uint256 => bytes storage ref)"
+                        }
+                      },
+                      "id": 1174,
+                      "indexExpression": {
+                        "id": 1173,
+                        "name": "destinationChainId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1165,
+                        "src": "2104:18:10",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2083:40:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_storage",
+                        "typeString": "bytes storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 1175,
+                      "name": "contractAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1167,
+                      "src": "2126:15:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes_calldata_ptr",
+                        "typeString": "bytes calldata"
+                      }
+                    },
+                    "src": "2083:58:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage",
+                      "typeString": "bytes storage ref"
+                    }
+                  },
+                  "id": 1177,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2083:58:10"
+                }
+              ]
+            },
+            "functionSelector": "4fd3f7d7",
+            "id": 1179,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 1170,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 1169,
+                  "name": "onlyOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 31,
+                  "src": "2063:9:10"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2063:9:10"
+              }
+            ],
+            "name": "setInteractorByChainId",
+            "nameLocation": "1971:22:10",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1168,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1165,
+                  "mutability": "mutable",
+                  "name": "destinationChainId",
+                  "nameLocation": "2002:18:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1179,
+                  "src": "1994:26:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1164,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1994:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1167,
+                  "mutability": "mutable",
+                  "name": "contractAddress",
+                  "nameLocation": "2037:15:10",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1179,
+                  "src": "2022:30:10",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1166,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2022:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1993:60:10"
+            },
+            "returnParameters": {
+              "id": 1171,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2073:0:10"
+            },
+            "scope": 1180,
+            "src": "1962:186:10",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1181,
+        "src": "201:1949:10",
+        "usedErrors": [
+          1740,
+          1744,
+          1746,
+          1748
+        ]
+      }
+    ],
+    "src": "32:2119:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.11",
+  "updatedAt": "2023-02-23T04:14:30.671Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "stateVariables": {
+      "interactorsByChainId": {
+        "details": "Maps a chain id to its corresponding address of the MultiChainSwap contract The address is expressed in bytes to allow non-EVM chains This mapping is useful, mainly, for two reasons:  - Given a chain id, the contract is able to route a transaction to its corresponding address  - To check that the messages (onZetaMessage, onZetaRevert) come from a trusted source"
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.1",
+    "@zetachain/protocol-contracts": "^0.0.3"
+  }
+}
